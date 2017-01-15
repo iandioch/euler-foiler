@@ -26,8 +26,11 @@ python3 parse.py test.png"""
 	# crop to only the section with the number of problems solved
 	cropped_image = orig_image.crop((47, 40, 97, 60))
 
+	width, height = cropped_image.size
+	scale = 5
+
 	# double the size of the image so the OCR has more to go on
-	resized_image = cropped_image.resize((100, 40), Image.ANTIALIAS)
+	resized_image = cropped_image.resize((width*scale, height*scale), Image.ANTIALIAS)
 
 	digits = tool.image_to_string(
 		resized_image,
