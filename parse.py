@@ -1,5 +1,6 @@
 from PIL import Image
 import sys
+import os
 
 import pyocr
 import pyocr.builders
@@ -10,6 +11,10 @@ if not len(image_loc):
     print('Please provide a Project Euler badge png to parse.')
     print('As an example, to parse `test.png`, run the program like this:')
     print('python3 parse.py test.png')
+    sys.exit(1)
+
+if not os.path.isfile(image_loc):
+    print('Could not find a file with the given path:', image_loc)
     sys.exit(1)
 
 tools = pyocr.get_available_tools()
