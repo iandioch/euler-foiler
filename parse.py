@@ -4,6 +4,7 @@ import sys
 import pyocr
 import pyocr.builders
 
+image_loc = ' '.join(sys.argv[1:])
 
 tools = pyocr.get_available_tools()
 if len(tools) == 0:
@@ -13,7 +14,7 @@ if len(tools) == 0:
 # should be 'Tesseract (sh)'
 tool = tools[0]
 
-orig_image = Image.open('test.png')
+orig_image = Image.open(image_loc)
 
 # crop to only the section with the number of problems solved
 cropped_image = orig_image.crop((47, 40, 97, 60))
