@@ -2,7 +2,7 @@
 
 Do you want to get the number of Project Euler problems you have solved programmatically, without spoofing the login captcha? This is a tool to take your profile badge (visible at https://projecteuler.net/profiles/you.png), and use [OCR](https://en.wikipedia.org/wiki/Optical_character_recognition) to parse the number of problems you have solved out of it.
 
-You can run it with `python3 parse.py path_to_badge.png`.
+You can run it on local file with `python3 parse.py -f path_to_badge.png` or have it download user's badge with `python3 parse.py -u username`.
 
 It depends on [pyocr](https://github.com/jflesch/pyocr/), [tesseract-ocr](https://github.com/tesseract-ocr/tesseract), and of course, Python 3.
 
